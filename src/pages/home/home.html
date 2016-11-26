@@ -6,9 +6,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-list>
+
+    <form [formGroup]="userForm" (submit)="saveUser()">
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input formControlName="name" id="name" type="text"></ion-input>     
+      </ion-item>
+
+      <control-messages [control]="userForm.controls.name"></control-messages>   
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input formControlName="email" id="email" type="email"></ion-input>
+      </ion-item>
+
+      <control-messages [control]="userForm.controls.email"></control-messages>
+
+      <ion-item>
+        <ion-label floating>Profile Description</ion-label>
+        <ion-textarea formControlName="profile" id="profile"></ion-textarea>
+      </ion-item>
+
+      <control-messages [control]="userForm.controls.profile"></control-messages>
+      <button ion-button full type="submit" [disabled]="!userForm.valid">Submit</button>
+    </form>
+  </ion-list>
 </ion-content>
