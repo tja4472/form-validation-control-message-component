@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list>
 
-    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <form [formGroup]="userForm" >
       <ion-item>
         <ion-label floating>Name</ion-label>
         <ion-input formControlName="name" id="name" type="text"></ion-input>     
@@ -30,7 +30,7 @@
       </ion-item>
 
       <control-messages [control]="userForm.controls.profile"></control-messages>
-      <button ion-button full type="submit" [disabled]="!userForm.valid">Submit</button>
+      <button ion-button full (click)="saveUser()" [disabled]="!userForm.valid">Submit</button>
     </form>
   </ion-list>
 </ion-content>
