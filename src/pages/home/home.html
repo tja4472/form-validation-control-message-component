@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list>
 
-    <form [formGroup]="userForm" (submit)="saveUser()">
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
       <ion-item>
         <ion-label floating>Name</ion-label>
         <ion-input formControlName="name" id="name" type="text"></ion-input>     

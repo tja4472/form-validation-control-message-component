@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   saveUser() {
-    console.log('saveUser');
+    console.log('saveUser', { userForm: this.userForm });
     if (this.userForm.dirty && this.userForm.valid) {
       alert(`Name: ${this.userForm.value.name} Email: ${this.userForm.value.email}`);
     }
