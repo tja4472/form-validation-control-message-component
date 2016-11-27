@@ -9,27 +9,28 @@
 <ion-content>
   <ion-list>
 
-    <form [formGroup]="userForm" >
+    <form [formGroup]="userForm">
       <ion-item>
         <ion-label floating>Name</ion-label>
-        <ion-input formControlName="name" id="name" type="text"></ion-input>     
+        <ion-input formControlName="name" type="text"></ion-input>     
       </ion-item>
 
       <control-messages [control]="userForm.controls.name"></control-messages>   
 
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input formControlName="email" id="email" type="email"></ion-input>
+        <ion-input formControlName="email" type="email"></ion-input>
       </ion-item>
 
       <control-messages [control]="userForm.controls.email"></control-messages>
 
       <ion-item>
         <ion-label floating>Profile Description</ion-label>
-        <ion-textarea formControlName="profile" id="profile"></ion-textarea>
+        <ion-textarea formControlName="profile"></ion-textarea>
       </ion-item>
 
       <control-messages [control]="userForm.controls.profile"></control-messages>
+      
       <button ion-button full (click)="saveUser()" [disabled]="!userForm.valid">Submit</button>
     </form>
   </ion-list>
